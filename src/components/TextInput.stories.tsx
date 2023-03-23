@@ -13,7 +13,6 @@ export default {
       </TextInput.Icon>,
       <TextInput.Input placeholder="Type your e-mail"/>
     ]
-
   },
   argTypes: {
     children: {
@@ -26,4 +25,11 @@ export default {
 
 export const Default: StoryObj<TextInputRootProps> = {};
 
+export const WhitoutIcon: StoryObj<TextInputRootProps> = {
+  args: {
+    children:[
+      <TextInput.Input placeholder="Type your e-mail"/>
+    ]
+  },
+};
 
