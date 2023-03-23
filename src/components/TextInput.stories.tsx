@@ -1,35 +1,26 @@
 import { Meta, StoryObj } from "@storybook/react";
 import  {Envelope, Lock } from 'phosphor-react';
-import { TextInput, TextInputRootProps } from "./TextInput";
+import { Checkbox, CheckboxProps } from "./Checkbox";
+import { Text, TextProps } from "./Text";
 
 export default {
-  title: "Components/TextInput",
-  component: TextInput.Root,
+  title: "Components/Checkbox",
+  component: Checkbox,
 
-  args: {
-    children:[
-      <TextInput.Icon >
-        <Envelope />
-      </TextInput.Icon>,
-      <TextInput.Input placeholder="Type your e-mail"/>
-    ]
-  },
-  argTypes: {
-    children: {
-      table: {
-          disable: true
-      }
-  },
-  }
-} as Meta<TextInputRootProps>;
+  args: { },
+  argTypes: {},
+  decorators: [
+    (Story) => {
+      return (
+        <div className="flex items-center gap-2">
+          {Story()} 
+          <Text size="sm">Lembrar de mim por 30 dias</Text>
 
-export const Default: StoryObj<TextInputRootProps> = {};
+        </div>
+      )
+    }
+  ]
+} as Meta<CheckboxProps>;
 
-export const WhitoutIcon: StoryObj<TextInputRootProps> = {
-  args: {
-    children:[
-      <TextInput.Input placeholder="Type your e-mail"/>
-    ]
-  },
-};
+export const Default: StoryObj<CheckboxProps> = {};
 
